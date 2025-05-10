@@ -21,5 +21,42 @@
 <div class="sm:bg-amber-500 md:bg-amber-600 mt-6">
   <p class="max-sm:text-white">I appear on screens wider than 768px</p>
 </div>
+<div class="bg-white text-black dark:bg-black dark:text-white">
+  Dark Mode enabled!
+</div>
 
+<div
+  class="rounded-lg m-10 bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-black"
+>
+  <h3
+    class="text-slate-900 dark:text-base font-medium tracking-tight dark:text-white"
+  >
+    Writes Upside-Down
+  </h3>
+  <p class="mt-2 text-sm text-slate-500 dark:text-blue-100">
+    The Zero Gravity Pen can be used to write in any orientation, including
+    upside-down. It even works in outer space.
+  </p>
+  <button
+    id="toggleDark"
+    class="text-blue-900 bg-blue-100 mt-8 rounded-md px-4 py-2 text-sm font-medium"
+    onclick="document.body.classList.toggle('dark')"
+  >
+    Toggle Dark Mode
+  </button>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleDark = document.getElementById("toggleDark");
+    toggleDark.addEventListener("click", function () {
+      if (document.documentElement.classList.includes("dark")) {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+      alert("click!");
+    });
+  });
+</script>
 <router-outlet />
